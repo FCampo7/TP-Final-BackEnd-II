@@ -1,0 +1,117 @@
+:root {
+  --primary: #2563eb;
+  --bg: #f8fafc;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --card-bg: #ffffff;
+  --rounded: 12px;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  background: linear-gradient(to right, #1d4ed8, #2563eb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Product Grid */
+/* Use a grid on the body for products since we have no other container */
+/* We skip the H1 and pagination links with specific selectors if needed */
+.product-card {
+  background: var(--card-bg);
+  border-radius: var(--rounded);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border);
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.product-card h3 {
+  margin-top: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.product-card h5 {
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0.5rem 0;
+}
+
+.stock {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #10b981; /* green for stock */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.thumbnails img {
+  border-radius: 8px;
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  border: 1px solid var(--border);
+}
+
+/* Pagination Links */
+a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  background-color: white;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+a:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background-color: #eff6ff;
+}
+
+/* Base body uses flex to stack items if no wrapper is present */
+@media (min-width: 768px) {
+  /* This is a hacky way to force a grid without a wrapper, but since I added .product-card it works fine as vertical list. 
+     If the user allows a wrapper, it would be even better. */
+}

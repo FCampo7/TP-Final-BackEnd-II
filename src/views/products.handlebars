@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="{{styles.products}}">
+<h1>Productos de la tienda</h1>
+
+{{#each pagination.docs}}
+{{#if this.status}}
+<div class="product-card">
+  <h3>{{this.title}}</h3>
+  <h5>{{this.description}}</h5>
+  <p class="price">${{this.price}}</p>
+  <p class="stock">Stock: {{this.stock}}</p>
+  <div class="thumbnails">
+    {{#each this.thumbnails}}
+    <img src="{{this}}" alt="{{title}}">
+    {{/each}}
+  </div>
+</div>
+{{/if}}
+{{/each}}
+
+<br>
+{{#if pagination.prevPage}}
+<a href="/products?page={{pagination.prevPage}}">Ir a la página {{pagination.prevPage}}</a>
+{{/if}}
+<a href="/products?page={{pagination.nextPage}}">Ir a la página {{pagination.nextPage}}</a>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/tienda.js"></script>

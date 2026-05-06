@@ -1,0 +1,28 @@
+{{!-- SIN EL ENCTYPE NO PODEMOS SUBIR ARCHIVOS --}}
+<form action="/api/products" method="post" enctype="multipart/form-data">
+    <label for="">Titulo
+        <input type="text" name="title"><br>
+    </label>
+    <label for="">Descripcion
+        <input type="text" name="description"><br>
+    </label>
+    <label for="">Precio $
+        <input type="number" name="price"><br>
+    </label>
+    <label for="">Categoría
+        <input type="text" name="category"><br>
+    </label>
+    <label for="">Stock
+        <input type="number" name="stock"><br>
+    </label>
+    <label for="">Disponible
+        <input type="checkbox" name="status" checked><br>
+    </label>
+    <label for="">Código
+        <input type="text" name="code"><br>
+    </label>
+    <label for="">Imagen
+        <input type="file" name="thumbnails">
+    </label><br>
+    <button>Agregar producto</button>
+</form>

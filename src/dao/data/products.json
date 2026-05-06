@@ -1,0 +1,202 @@
+[
+    {
+        "title": "Monitor Gamer 24\"",
+        "description": "Monitor LED Full HD 144Hz",
+        "price": 25000,
+        "category": "tecnologia",
+        "stock": "10",
+        "status": true,
+        "code": "tec001",
+        "thumbnails": []
+    },
+    {
+        "title": "Teclado Mecánico RGB",
+        "description": "Teclado switches blue con retroiluminación",
+        "price": 8500,
+        "category": "tecnologia",
+        "stock": "15",
+        "status": true,
+        "code": "tec002",
+        "thumbnails": []
+    },
+    {
+        "title": "Mouse Gamer Pro",
+        "description": "Mouse óptico 16000 DPI",
+        "price": 4500,
+        "category": "tecnologia",
+        "stock": "20",
+        "status": true,
+        "code": "tec003",
+        "thumbnails": []
+    },
+    {
+        "title": "Auriculares HyperX",
+        "description": "Auriculares con sonido surround 7.1",
+        "price": 12000,
+        "category": "tecnologia",
+        "stock": "8",
+        "status": true,
+        "code": "tec004",
+        "thumbnails": []
+    },
+    {
+        "title": "Silla Gamer Premium",
+        "description": "Silla ergonómica reclinable 180 grados",
+        "price": 45000,
+        "category": "muebles",
+        "stock": "5",
+        "status": true,
+        "code": "mue001",
+        "thumbnails": []
+    },
+    {
+        "title": "Escritorio Gamer L",
+        "description": "Escritorio en forma de L con soporte para cables",
+        "price": 32000,
+        "category": "muebles",
+        "stock": "4",
+        "status": true,
+        "code": "mue002",
+        "thumbnails": []
+    },
+    {
+        "title": "Webcam Full HD 1080p",
+        "description": "Cámara para streaming con micrófono integrado",
+        "price": 7500,
+        "category": "tecnologia",
+        "stock": "12",
+        "status": true,
+        "code": "tec005",
+        "thumbnails": []
+    },
+    {
+        "title": "Micrófono Condensador",
+        "description": "Micrófono USB para podcast y streaming",
+        "price": 9800,
+        "category": "tecnologia",
+        "stock": "10",
+        "status": true,
+        "code": "tec006",
+        "thumbnails": []
+    },
+    {
+        "title": "Procesador Ryzen 5",
+        "description": "CPU 6 núcleos 12 hilos 3.6GHz",
+        "price": 55000,
+        "category": "componentes",
+        "stock": "6",
+        "status": true,
+        "code": "com001",
+        "thumbnails": []
+    },
+    {
+        "title": "Placa de Video RTX 3060",
+        "description": "GPU 12GB GDDR6 Ray Tracing",
+        "price": 120000,
+        "category": "componentes",
+        "stock": "3",
+        "status": true,
+        "code": "com002",
+        "thumbnails": []
+    },
+    {
+        "title": "Memoria RAM 16GB",
+        "description": "RAM DDR4 3200MHz RGB",
+        "price": 9500,
+        "category": "componentes",
+        "stock": "25",
+        "status": true,
+        "code": "com003",
+        "thumbnails": []
+    },
+    {
+        "title": "SSD NVMe 1TB",
+        "description": "Disco de estado sólido alta velocidad",
+        "price": 11000,
+        "category": "componentes",
+        "stock": "18",
+        "status": true,
+        "code": "com004",
+        "thumbnails": []
+    },
+    {
+        "title": "Fuente 750W 80 Plus",
+        "description": "Fuente de poder certificada Gold",
+        "price": 15000,
+        "category": "componentes",
+        "stock": "10",
+        "status": true,
+        "code": "com005",
+        "thumbnails": []
+    },
+    {
+        "title": "Gabinete Mid Tower",
+        "description": "Gabinete con panel de vidrio templado",
+        "price": 13000,
+        "category": "componentes",
+        "stock": "7",
+        "status": true,
+        "code": "com006",
+        "thumbnails": []
+    },
+    {
+        "title": "Placa Madre B550",
+        "description": "Motherboard compatible con Ryzen 5000",
+        "price": 18000,
+        "category": "componentes",
+        "stock": "5",
+        "status": true,
+        "code": "com007",
+        "thumbnails": []
+    },
+    {
+        "title": "Joystick PS5 DualSense",
+        "description": "Control inalámbrico con respuesta háptica",
+        "price": 22000,
+        "category": "consolas",
+        "stock": "15",
+        "status": true,
+        "code": "con001",
+        "thumbnails": []
+    },
+    {
+        "title": "Nintendo Switch OLED",
+        "description": "Consola híbrida con pantalla OLED 7\"",
+        "price": 110000,
+        "category": "consolas",
+        "stock": "4",
+        "status": true,
+        "code": "con002",
+        "thumbnails": []
+    },
+    {
+        "title": "Juego Zelda: TotK",
+        "description": "Tears of the Kingdom para Nintendo Switch",
+        "price": 15000,
+        "category": "juegos",
+        "stock": "20",
+        "status": true,
+        "code": "con003",
+        "thumbnails": []
+    },
+    {
+        "title": "Cámara Réflex Canon",
+        "description": "Cámara digital 24.1 MP con lente 18-55mm",
+        "price": 145000,
+        "category": "tecnologia",
+        "stock": "2",
+        "status": true,
+        "code": "tec007",
+        "thumbnails": []
+    },
+    {
+        "title": "Notebook Gamer 15.6\"",
+        "description": "Laptop i7 16GB RAM RTX 3050",
+        "price": 210000,
+        "category": "tecnologia",
+        "stock": "3",
+        "status": true,
+        "code": "tec008",
+        "thumbnails": []
+    }
+]
