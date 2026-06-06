@@ -10,6 +10,7 @@ import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import passport from "passport";
 import initializePassport from "./config/passport.config.js";
+import config from "./config/config.js";
 
 const app = express();
 
@@ -20,10 +21,10 @@ app.use(cookieParser());
 initializePassport();
 app.use(passport.initialize());
 
-const httpServer = app.listen(3000, () => {
-	console.log("server escuchando en 3000");
+const httpServer = app.listen(config.port, () => {
+	console.log(`server escuchando en ${config.port}`);
 	mongoose
-		.connect("mongodb://localhost:27017/ecommerce")
+		.connect(config.mongoUri)
 		.then(() => console.log("conectado a DB"));
 });
 

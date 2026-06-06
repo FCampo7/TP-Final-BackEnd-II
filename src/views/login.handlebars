@@ -1,0 +1,35 @@
+<div>
+    <h2>Iniciar Sesión</h2>
+    <form id="loginForm">
+        <label>Email: <input type="email" name="email" required></label><br><br>
+        <label>Contraseña: <input type="password" name="password" required></label><br><br>
+        <button type="submit">Ingresar</button>
+    </form>
+    <p>No tienes cuenta? <a href="/register">Regístrate aquí</a></p>
+</div>
+
+<script>
+    const form = document.getElementById("loginForm");
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const obj = {};
+        data.forEach((value, key) => obj[key] = value);
+
+        const response = await fetch("/api/sessions/login", {
+            method: "POST",
+            body: JSON.stringify(obj),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+            alert("Login exitoso");
+            window.location.replace("/products");
+        } else {
+            alert("Error: " + result.error);
+        }
+    });
+</script>

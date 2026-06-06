@@ -1,58 +1,34 @@
 import { Router } from "express";
-import { cartModel } from "../model/cartModel.js";
+import { authenticateJWT, authorizeRole } from "../middlewares/auth.middleware.js";
+import { 
+    getCartById, 
+    createCart, 
+    addProductToCart, 
+    removeProductFromCart 
+} from "../controllers/cart.controller.js";
 
 const router = Router();
 
-router.get("/:cid", async (req, res) => {
-    try {
-        const { cid } = req.params;
-        const cart = await cartModel.findOne({ _id: cid })
-        res.status(200).json(cart);
-    } catch (error) {
-        res.status(500).json({ message: "error al obtener el carrito", error });
-    }
-});
+// Endpoint para crear carrito
+router.post("/", createCart);
 
-router.post("/", async (req, res) => {
-    try {
-        const newCart = await cartModel.create({});
-        res.status(200).json({ message: "carrito creado", newCart });
-    } catch (error) {
-        res.status(500).json({ message: "error al crear el carrito", error });
-    }
-});
+// Endpoint para obtener un carrito
+router.get("/:cid", getCartById);
 
-router.post("/:cid/product/:pid", async (req, res) => {
-    try {
-        const { cid, pid } = req.params;
+// Solo el usuario puede agregar productos a su carrito
+router.post(
+    "/:cid/product/:pid", 
+    authenticateJWT, 
+    authorizeRole(["user"]), 
+    addProductToCart
+);
 
-        const { productModel } = (await import("../model/productModel.js"));
-        const product = await productModel.findById(pid);
-        if (!product) return res.status(404).json({ message: "producto no encontrado" });
-        let cart = await cartModel.findOneAndUpdate(
-            { _id: cid, "products.product": pid },
-            { $inc: { "products.$.quantity": 1 } },
-            { new: true }
-        );
-        if (!cart) return res.status(404).json({ message: "carrito no encontrado" });
-        else res.status(200).json({ message: "carrito actualizado", cart });
-    } catch (error) {
-        res.status(500).json({ message: "error al agregar el producto al carrito", error });
-    }
-});
-
-router.delete("/:cid/product/:pid", async (req, res) => {
-    try {
-        const { cid, pid } = req.params;
-        const cart = await cartModel.findOneAndUpdate(
-            { _id: cid },
-            { $pull: { products: { product: pid } } },
-            { new: true }
-        );
-        res.status(200).json({ message: "producto eliminado del carrito", cart });
-    } catch (error) {
-        res.status(500).json({ message: "error al eliminar el producto del carrito", error });
-    }
-});
+// Permitimos al usuario remover productos de su carrito
+router.delete(
+    "/:cid/product/:pid", 
+    authenticateJWT, 
+    authorizeRole(["user"]), 
+    removeProductFromCart
+);
 
 export default router;
